@@ -13,10 +13,10 @@ public function uploadPhoto(Request $request)
 {
     if ($request->hasFile('photo')) {
         $path = $request->file('photo')->store('photos');
-        // Guardar el camino a la foto en la base de datos o hacer lo que necesites
+        
     }
 
-    // Redirigir o retornar una respuesta según tus necesidades
+    
 }
 
 

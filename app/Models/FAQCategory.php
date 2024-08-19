@@ -10,9 +10,7 @@ class FAQCategory extends Model
     use HasFactory;
 
 
-    // public function f_a_q_questions(){
-    //     return $this->hasMany('App\Models\FAQQuestion');
-    // }
+    
 
     public function f_a_q_questions()
 {

@@ -15,7 +15,7 @@
 
                     <div class="card-body">
 
-                        <small>Gepost door <strong><a href="{{route('profile', $question->user->username)}}" style="text-decoration: none; color:rgb(11, 228, 11)">{{$question->user->username}}</a> </strong> {{$question->created_at->format('d/m/Y \o\m H:i')}} </small>
+                        <small>Posted by <strong><a href="{{route('profile', $question->user->username)}}" style="text-decoration: none; color:rgb(11, 228, 11)">{{$question->user->username}}</a> </strong> {{$question->created_at->format('d/m/Y \o\m H:i')}} </small>
 
                 <br><br>
                 {{$question->message}};
@@ -40,7 +40,7 @@
                 <br>
 
 
-                <small> Deze post heeft <strong style="color:red"> {{$question->likes()->count()}} likes </strong></small> --}}
+                <small> This post has <strong style="color:red"> {{$question->likes()->count()}} likes </strong></small> --}}
 
             @auth
 

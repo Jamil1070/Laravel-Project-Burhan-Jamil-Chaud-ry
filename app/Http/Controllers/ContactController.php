@@ -14,22 +14,15 @@ class ContactController extends Controller
 
     public function show()
     {
-        $formData = []; // Define el arreglo vacío para almacenar los datos del formulario
+        $formData = []; 
 
     return view('contact', compact('formData'));
     }
 
-    // public function submit(Request $request)
-    // {
-
-    //     $validatedData = $request->validate([
-    //         'username' => 'required',
-    //         'email' => 'required|email',
-    //         'message' => 'required',
-    //     ]);
+   
 
 
-    //     Mail::to('admin@example.com')->send(new \App\Mail\ContactFormSubmitted($validatedData));
+    
 
     public function submit (Request $request)
 {
@@ -37,8 +30,7 @@ class ContactController extends Controller
     $formData = $request->all();
     $email = new ContactFormSubmitted($formData);
 
-        // I cannot make this work...
-     //Mail::to('admin@example.com')->send($email);
+      
 
 
         return redirect()->route('profile', Auth::user()->username)->with('success', '¡Thank You! Your message has been sent.');

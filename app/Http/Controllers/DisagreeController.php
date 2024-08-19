@@ -21,13 +21,13 @@ class DisagreeController extends Controller
     $opinion = Opinion::findOrFail($opinionId);
 
     if ($opinion->user_id == Auth::user()->id) {
-        abort(403, 'You cannot disagree with your own message');
+        abort(403, 'You cannot disagree with your own message,try again');
     }
 
     $disagree = Disagree::where('opinion_id', '=', $opinionId)->where('user_id', '=', Auth::user()->id)->first();
 
     if ($disagree != NULL) {
-        abort(403, 'You cannot disagree with an opinion more than once');
+        abort(403, 'You cannot disagree with an opinion more than once,sorry');
     }
 
     $agree = Agree::where('opinion_id', '=', $opinionId)->where('user_id', '=', Auth::user()->id)->first();

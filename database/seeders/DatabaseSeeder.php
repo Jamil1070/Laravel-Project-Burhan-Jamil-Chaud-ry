@@ -28,15 +28,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-        // $this->call(UsersTableSeeder::class);
-        // $this->call(AdminSeeder::class);
+       
 
 
 
@@ -51,67 +43,69 @@ class DatabaseSeeder extends Seeder
         ]);
         //USERS
 
+       
         User::create([
             'id' => '1',
-            'name' => 'Mateo',
-            'username' => 'mateo1723',
-            'dateofbirth' => '1990-01-01',
-            'email' => 'mateo@gmail.com',
-            'password' => 'Password!321',
-            'aboutme' => 'I love drifting cars!!.',
+            'name' => 'Alex',
+            'username' => 'alex_gear',
+            'dateofbirth' => '1991-05-12',
+            'email' => 'alex.gear@example.com',
+            'password' => 'Password!321', 
+            'aboutme' => 'Adventure seeker with a passion for custom cars.',
             'photo_path'=> 'photos/user1.jpg',
         ]);
 
         User::create([
             'id' => '2',
-            'name' => 'Lucía',
-            'username' => 'lucia456',
-            'dateofbirth' => '1995-05-10',
-            'email' => 'lucia@gmail.com',
-            'password' => 'Password!321',
-            'aboutme' => 'I am a mecanic that loves learning new things.',
+            'name' => 'Sofia',
+            'username' => 'sofia_repair',
+            'dateofbirth' => '1996-11-23',
+            'email' => 'sofia.repair@example.com',
+            'password' => 'Password!321', // Keeping the existing password
+            'aboutme' => 'Automotive technician who loves restoring old classics.',
             'photo_path'=> 'photos/user2.jpg',
         ]);
 
         User::create([
             'id' => '3',
-            'name' => 'Charly',
-            'username' => 'charly',
-            'dateofbirth' => '1988-09-20',
-            'email' => 'carlos@gmail.com',
-            'password' => 'Password!321',
-            'aboutme' => 'I am a professional pilot, I love meeting new people',
+            'name' => 'Liam',
+            'username' => 'liam_pilot',
+            'dateofbirth' => '1989-07-16',
+            'email' => 'liam.pilot@example.com',
+            'password' => 'Password!321', 
+            'aboutme' => 'Flying enthusiast who enjoys speed and precision.',
             'photo_path'=>'photos/user3.jpg',
         ]);
+
         User::create([
             'id' => '4',
-            'name' => 'Jony',
-            'username' => 'jonymet',
-            'dateofbirth' => '1994-07-01',
-            'email' => 'jony@gmail.com',
-            'password' => 'Password!321',
-            'aboutme' => 'Retired mecanic',
+            'name' => 'Emma',
+            'username' => 'emma_auto',
+            'dateofbirth' => '1995-03-08',
+            'email' => 'emma.auto@example.com',
+            'password' => 'Password!321', 
+            'aboutme' => 'Car lover with a knack for mechanical innovations.',
             'photo_path'=>'photos/user4.jpg',
         ]);
 
         User::create([
             'id' => '5',
-            'name' => 'Karl',
-            'username' => 'Karl3',
-            'dateofbirth' => '1997-05-24',
-            'email' => 'karl@gmail.com',
-            'password' => 'Password!321',
-            'aboutme' => 'Hey guys! I have a beautiful E30 and I love cars ',
+            'name' => 'Noah',
+            'username' => 'noah_drives',
+            'dateofbirth' => '1998-10-05',
+            'email' => 'noah.drives@example.com',
+            'password' => 'Password!321', 
+            'aboutme' => 'Driving enthusiast with a passion for motorsports.',
         ]);
 
         User::create([
             'id' => '6',
-            'name' => 'Rose',
-            'username' => 'rosie',
-            'dateofbirth' => '1978-09-02',
-            'email' => 'rosie25@gmail.com',
-            'password' => 'Password!321',
-            'aboutme' => '4X4 LOVER!!!',
+            'name' => 'Olivia',
+            'username' => 'olivia_4x4',
+            'dateofbirth' => '1983-06-22',
+            'email' => 'olivia.4x4@example.com',
+            'password' => 'Password!321', 
+            'aboutme' => 'Off-road adventurer who loves exploring rugged terrains.',
             'photo_path'=> 'photos/user6.jpg',
         ]);
 
@@ -119,38 +113,38 @@ class DatabaseSeeder extends Seeder
 
         Post::create([
             'id' => '1',
-            'title' => 'Test Post',
-            'message' => 'Students of Toronto have made a new car with three wheels. It reaches 80km/h. They sell it 5.000$',
-            'user_id' => '6',
-            'photo_path' => 'photos/post1.jpg',
-            'created_at' => Carbon::parse('2024-06-13 10:35:00'),
+            'title' => 'New Innovations in Autonomous Vehicles',
+            'message' => 'A breakthrough in autonomous driving technology has been revealed. The new system uses advanced AI to navigate complex urban environments with ease. Initial models start at $70,000.',
+            'user_id' => '3', // Updated user_id
+            'photo_path' => 'photos/post1.jpg', // Unchanged
+            'created_at' => Carbon::parse('2024-08-20 13:00:00'),
         ]);
 
         Post::create([
             'id' => '2',
-            'title' => 'The fastest car of the world',
-            'message' => 'Buggati Chiron has been choosen as the fastest car in the world. It reaches 360km/h. It has really special wheels, normals wheels could not afford that speed. The price of the tyres is about 20.000€ all of them.',
-            'user_id' => '3',
-            'photo_path' => 'photos/post2.jpg',
-            'created_at' => Carbon::parse('2021-03-01 07:35:00'),
+            'title' => 'Electric Motorcycles Taking Over the Market',
+            'message' => 'Electric motorcycles are becoming increasingly popular, offering impressive performance and eco-friendly features. The latest models boast a range of 300km and start at $15,000.',
+            'user_id' => '6', // Updated user_id
+            'photo_path' => 'photos/post2.jpg', // Unchanged
+            'created_at' => Carbon::parse('2023-11-01 10:00:00'),
         ]);
 
         Post::create([
             'id' => '3',
-            'title' => '4x4 car event this saturday 24',
-            'message' => 'For all the lovers of 4x4, this saturday there will be a special event in Kortijk. It is completely free and everybody is welcome!!',
-            'user_id' => '4',
-            'photo_path' => 'photos/post3.jpg',
-            'created_at' => Carbon::parse('2021-06-17 17:35:00'),
+            'title' => 'Upcoming Auto Show Highlights',
+            'message' => 'The auto show this year will feature an array of new models, including electric SUVs and high-performance sports cars. Expect exciting reveals and hands-on demonstrations.',
+            'user_id' => '2', // Updated user_id
+            'photo_path' => 'photos/post3.jpg', // Unchanged
+            'created_at' => Carbon::parse('2024-01-10 16:00:00'),
         ]);
 
         Post::create([
             'id' => '4',
-            'title' => 'Is this the lowest quad ever???',
-            'message' => 'This quad is 15cm lowered. It has about 12.000€ in modifications. It is a Yamaha Raptor 700R with the engine changed. The engine it has is a Duccati 1000cm^3',
-            'user_id' => '1',
-            'photo_path' => 'photos/post4.jpg',
-            'created_at' => Carbon::parse('2019-01-07 19:21:00'),
+            'title' => 'New Trends in Car Customization',
+            'message' => 'Explore the latest trends in car customization, from unique paint jobs to advanced tuning options. Car enthusiasts are pushing the boundaries of personalization with these new innovations.',
+            'user_id' => '5', // Updated user_id
+            'photo_path' => 'photos/post4.jpg', // Unchanged
+            'created_at' => Carbon::parse('2023-12-05 19:30:00'),
         ]);
         
 
@@ -158,70 +152,79 @@ class DatabaseSeeder extends Seeder
 
         Question::create([
             'id' => '1',
-            'title' => 'Is it better Rb26 or 2jz engine?',
-            'message' => 'Hello guys!! I just bought an old supra mk3 and I would like to ask about what engine do you guys think that its better. They are simillar price but I do not really know which one to choose... ',
+            'title' => 'Best Practices for Engine Swaps',
+            'message' => 'Hey everyone! I’m considering swapping the engine in my classic car and wanted to get some advice on the best practices. Any recommendations on how to approach this project?',
             'user_id' => '4',
             'photo_path' => 'photos/question1.jpg',
-            'created_at' => Carbon::parse('2021-07-07 19:21:00'),
+            'created_at' => Carbon::parse('2024-08-19 10:00:00'),
         ]);
+        
         Question::create([
             'id' => '2',
-            'title' => 'I broke my clutch I need help to fix it',
-            'message' => 'Hello everyone! The other day i broke my clutch. I need to know how to repair it please, I have no money to bring it to a garage.',
+            'title' => 'Tips for DIY Brake Maintenance',
+            'message' => 'Hi folks! I’m planning to do some brake maintenance on my vehicle this weekend. Can anyone share tips or common pitfalls to watch out for during this DIY project?',
             'user_id' => '1',
             'photo_path' => 'photos/question2.jpg',
-            'created_at' => Carbon::parse('2021-04-07 11:21:00'),
+            'created_at' => Carbon::parse('2024-08-19 12:00:00'),
         ]);
+        
         Question::create([
             'id' => '3',
-            'title' => 'RALLY vs DAKAR',
-            'message' => 'What do you guys preffer??? ',
+            'title' => 'Best Car for Track Days',
+            'message' => 'What are your thoughts on the best cars for track days? I’m looking for something that handles well and is fun to drive. Any suggestions?',
             'user_id' => '3',
-            'created_at' => Carbon::parse('2011-07-07 19:21:00'),
+            'created_at' => Carbon::parse('2024-08-19 14:00:00'),
+        ]);
+        
+        Question::create([
+            'id' => '4',
+            'title' => 'How to Choose the Right Suspension Setup',
+            'message' => 'I’m considering upgrading my car’s suspension and would love some advice on how to choose the right setup. What factors should I consider for both street and track use?',
+            'user_id' => '2',
+            'created_at' => Carbon::parse('2024-08-19 16:00:00'),
         ]);
 
         //OPINIONS
 
         Opinion::create([
             'id' => '1',
-            'message' => 'Bro you will need a lot of keys and also this special key for the clutch ',
+            'message' => 'Make sure to use a torque wrench when tightening the brake components. It’s crucial to avoid over-tightening, which can cause issues.',
             'user_id' => '3',
             'question_id' => '2',
             'created_at' => Carbon::parse('2023-07-07 19:21:00'),
         ]);
-
+        
         Opinion::create([
             'id' => '2',
-            'message' => 'This youtuber explains how you can change your clutch. Its not an Opel Corsa but you can make it the same way. I hope you have luck, keep us updated!! ',
+            'message' => 'I recommend using high-temperature brake grease for the caliper pins. It will help prevent any squeaking noises later on.',
             'user_id' => '5',
             'question_id' => '2',
             'created_at' => Carbon::parse('2023-07-07 19:38:00'),
         ]);
-
+        
         Opinion::create([
             'id' => '3',
-            'message' => 'Good luck bro!! ',
+            'message' => 'When bleeding the brakes, start with the wheel furthest from the master cylinder. It’s a small thing, but it makes the process smoother.',
             'user_id' => '4',
             'question_id' => '2',
             'created_at' => Carbon::parse('2023-06-12 19:50:00'),
         ]);
-
+        
         Opinion::create([
             'id' => '4',
-            'message' => '2JZ bro . STUTUTUTUTUTTUU!! ',
+            'message' => 'For an engine swap, always double-check your wiring harness compatibility. It’s a common oversight that can lead to headaches.',
             'user_id' => '4',
             'question_id' => '1',
             'created_at' => Carbon::parse('2023-07-07 19:51:00'),
         ]);
-
+        
         Opinion::create([
             'id' => '5',
-            'message' => '2JZ FOR SURE!! 2JZ OF SUPRA NEVER DIES.',
+            'message' => 'I’d suggest planning for a custom exhaust system if you go with a 2JZ swap. The stock one often doesn’t align perfectly.',
             'user_id' => '6',
             'question_id' => '1',
             'created_at' => Carbon::parse('2023-07-07 19:08:00'),
         ]);
-
         //LIKES
 
         Like::create([
@@ -230,11 +233,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => '1',
         ]);
 
-        Like::create([
-            'id' => '2',
-            'post_id' => '1',
-            'user_id' => '2',
-        ]);
+        
 
         Like::create([
             'id' => '3',
@@ -243,21 +242,30 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Like::create([
+            'id' => '2',
+            'post_id' => '1',
+            'user_id' => '2',
+        ]);
+
+
+        Like::create([
             'id' => '4',
             'post_id' => '1',
             'user_id' => '4',
         ]);
 
+        
+
         Like::create([
             'id' => '5',
-            'post_id' => '2',
-            'user_id' => '1',
+            'post_id' => '1',
+            'user_id' => '5',
         ]);
 
         Like::create([
             'id' => '6',
-            'post_id' => '3',
-            'user_id' => '2',
+            'post_id' => '1',
+            'user_id' => '6',
         ]);
 
         Like::create([
@@ -274,16 +282,18 @@ class DatabaseSeeder extends Seeder
 
         //AGREES
 
-        Agree::create([
-            'id' => '1',
-            'opinion_id' => '3',
-            'user_id' => '3',
-        ]);
+       
 
         Agree::create([
             'id' => '2',
             'opinion_id' => '4',
             'user_id' => '4',
+        ]);
+
+        Agree::create([
+            'id' => '1',
+            'opinion_id' => '3',
+            'user_id' => '3',
         ]);
 
         Agree::create([
@@ -310,72 +320,72 @@ class DatabaseSeeder extends Seeder
 
         FAQCategory::create([
             'id' => '1',
-            'name' => 'MECANICS',
-            'created_at' => Carbon::parse('2023-07-07 19:08:00'),
+            'name' => 'ENGINE TUNING',
+            'created_at' => Carbon::parse('2024-08-07 19:08:00'),
         ]);
-
+        
         FAQCategory::create([
             'id' => '2',
-            'name' => 'CURIOSITY',
-            'created_at' => Carbon::parse('2023-07-07 19:12:00'),
+            'name' => 'PERFORMANCE UPGRADES',
+            'created_at' => Carbon::parse('2023-06-07 19:12:00'),
         ]);
-
+        
         FAQCategory::create([
             'id' => '3',
-            'name' => 'STANCE CARS',
-            'created_at' => Carbon::parse('2023-07-07 19:01:00'),
+            'name' => 'SUSPENSION & HANDLING',
+            'created_at' => Carbon::parse('2022-07-07 19:01:00'),
         ]);
 
 
         //FAQQUESTIONS
-
         FAQQuestion::create([
             'id' => '1',
             'f_a_q_categorie_id' => '2',
-            'question' => 'What is the best car for long trips?',
-            'answer' => 'The best car for long trips depends on your needs and preferences. Some of the most popular cars for long trips are high-end sedans and SUVs that offer comfort, space, and advanced safety features.',
-            'created_at' => Carbon::parse('2023-07-07 19:15:00'),
+            'question' => 'What is the best car for daily commuting?',
+            'answer' => 'The best car for daily commuting is one that balances fuel efficiency, comfort, and reliability. Popular options include compact sedans and hybrid vehicles, which offer great gas mileage and easy maneuverability in traffic.',
+            'created_at' => Carbon::parse('2024-07-07 19:15:00'),
         ]);
-
+        
         FAQQuestion::create([
             'id' => '2',
             'f_a_q_categorie_id' => '1',
-            'question' => 'When should I get an oil change?',
-            'answer' => 'The timing for an oil change should follow the recommendations of your cars manufacturer. Generally, its recommended to change the oil every 5,000 to 7,500 kilometers or every 6 months.',
-            'created_at' => Carbon::parse('2023-07-07 19:14:00'),
+            'question' => 'How do I know when my brakes need replacing?',
+            'answer' => 'You should replace your brakes if you hear squealing or grinding noises, feel vibrations when braking, or notice longer stopping distances. Regular brake inspections every 20,000 kilometers are also recommended.',
+            'created_at' => Carbon::parse('2022-07-07 19:14:00'),
         ]);
-
+        
         FAQQuestion::create([
             'id' => '3',
             'f_a_q_categorie_id' => '2',
-            'question' => 'What are the key factors to consider when buying a used car?',
-            'answer' => 'When buying a used car, its important to consider the following factors: History of maintenance and repairs for the car, Mileage of the car, Overall condition of the car, including body, interiors, and mechanical system.',
-            'created_at' => Carbon::parse('2023-07-07 19:21:00'),
+            'question' => 'What should I consider before installing aftermarket parts?',
+            'answer' => 'Before installing aftermarket parts, consider how they will affect your vehicle’s performance, warranty, and resale value. Always choose reputable brands and consult a professional if unsure about compatibility.',
+            'created_at' => Carbon::parse('2022-07-07 19:21:00'),
         ]);
-
+        
         FAQQuestion::create([
             'id' => '4',
             'f_a_q_categorie_id' => '1',
-            'question' => 'How often should I rotate my tires?',
-            'answer' => 'Tire rotation is an important maintenance task to ensure even tire wear and extend the lifespan of your tires. Its generally recommended to rotate your tires every 6,000 to 8,000 kilometers or every 6 months.',
-            'created_at' => Carbon::parse('2023-07-07 19:24:00'),
+            'question' => 'What are the signs of a failing suspension?',
+            'answer' => 'Signs of a failing suspension include a rough ride, unusual tire wear, nose-diving during braking, and fluid leaks near the shock absorbers. Have your suspension checked if you notice these symptoms.',
+            'created_at' => Carbon::parse('2023-07-03 19:24:00'),
         ]);
-
+        
         FAQQuestion::create([
             'id' => '5',
             'f_a_q_categorie_id' => '1',
-            'question' => 'What is the difference between all-wheel drive (AWD) and four-wheel drive (4WD)?',
-            'answer' => 'AWD is typically found in cars and crossovers and provides power to all four wheels automatically, based on the road conditions. 4WD is commonly found in trucks and SUVs and is designed for off-road and rugged driving conditions.',
-            'created_at' => Carbon::parse('2023-07-07 19:28:00'),
+            'question' => 'How often should I replace my car’s air filter?',
+            'answer' => 'You should replace your car’s air filter every 20,000 to 30,000 kilometers, or more frequently if you drive in dusty conditions. A clean air filter helps maintain engine performance and fuel efficiency.',
+            'created_at' => Carbon::parse('2024-07-03 19:28:00'),
         ]);
-
+        
         FAQQuestion::create([
             'id' => '6',
             'f_a_q_categorie_id' => '2',
-            'question' => 'How can I improve my cars fuel efficiency?',
-            'answer' => 'To improve your cars fuel efficiency, you can follow these tips: Maintain proper tire pressure; Reduce excess weight in the car; Avoid aggressive driving, including rapid acceleration and hard braking; Use the air conditioning sparingly.',
-            'created_at' => Carbon::parse('2023-07-07 19:37:00'),
+            'question' => 'What are the benefits of using synthetic oil?',
+            'answer' => 'Synthetic oil offers better protection at extreme temperatures, reduces engine wear, and provides longer intervals between oil changes. It’s especially beneficial for high-performance and turbocharged engines.',
+            'created_at' => Carbon::parse('2024-07-07 19:37:00'),
         ]);
+        
 
 
 

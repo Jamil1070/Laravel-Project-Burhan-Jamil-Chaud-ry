@@ -30,7 +30,7 @@ class FAQCategoryController extends Controller
             'name'=> 'required|min:3',
 
         ]);
-        //CON ESTO NOS ASEGURAMOS DE QUE LOS DATOS SEAN CORRECTOS, SI HAY ALGO MAL DE AHI NO PASA
+        
 
         $f_a_q_categorie = new FAQCategory;
 
@@ -61,7 +61,7 @@ class FAQCategoryController extends Controller
     public function edit($id){
         $f_a_q_categorie = FAQCategory::findOrFail($id);
 
-        //para que no podamos editar los posts que no son nuestros
+        
         if (!Auth::user()->is_admin) {
             abort(403, 'Only admins can edit categories');
         }
@@ -75,7 +75,7 @@ class FAQCategoryController extends Controller
         $f_a_q_categorie = FAQCategory::findOrFail($id);
 
 
-        //para que no podamos editar los posts que no son nuestros
+        
         if (!Auth::user()->is_admin) {
             abort(403, 'Only admins can edit categories');
         }

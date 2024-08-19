@@ -15,37 +15,7 @@ class AgreeController extends Controller
         $this->middleware('auth');
     }
 
-//     public function agree($opinionId, Request $request)
-// {
-//     $opinion = Opinion::findOrFail($opinionId);
 
-//     if ($opinion->user_id == Auth::user()->id) {
-//         abort(403, 'You cannot agree with your own message');
-//     }
-
-//     $agree = Agree::where('opinion_id', '=', $opinionId)->where('user_id', '=', Auth::user()->id)->first();
-
-//     if ($agree != NULL) {
-//         abort(403, 'You cannot agree with an opinion more than once');
-//     }
-
-//     $agree = new Agree;
-//     $agree->user_id = Auth::user()->id;
-//     $agree->opinion_id = $opinionId;
-//     $agree->save();
-
-//     $question = $opinion->question;
-
-
-//     // dd($question);
-
-//     if ($question) {
-//         $opinions = Opinion::where('question_id', $question->id)->latest()->get();
-//         return view('questions.show', compact('question', 'opinions'))->with('status', 'YOU AGREE WITH THIS OPINION');
-//     } else {
-//         abort(404, 'Question not found');
-//     }
-// }
 
 
 public function agree($opinionId, Request $request)

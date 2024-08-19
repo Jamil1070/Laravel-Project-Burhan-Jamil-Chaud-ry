@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('updateProfile', $user->id) }}">
                         @csrf
-                        <!--si cambiamos el post por PUT no va a funcionar entonces tenemos que usar este metodo-->
+                       
                         @method('PUT')
 
                         <div class="row mb-3">

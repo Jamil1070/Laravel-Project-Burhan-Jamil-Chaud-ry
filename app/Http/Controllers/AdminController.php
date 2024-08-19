@@ -23,24 +23,11 @@ class AdminController extends Controller
     {
         $users = User::all();
 
-        // dd($users);
+        
 
         return view('administrator.adminpage', compact('users'));
     }
 
-//     public function adminPanel()
-// {
-//     try {
-//         $users = User::all();
-
-//         dd($users);
-
-//         return view('administrator.adminpage', compact('users'));
-//     } catch (\Exception $e) {
-//         // Manejo de la excepción
-//         dd($e); // Puedes imprimir la excepción para ver detalles del error
-//     }
-// }
 
 
 

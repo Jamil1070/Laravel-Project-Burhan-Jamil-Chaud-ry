@@ -9,9 +9,7 @@ class FAQQuestion extends Model
 {
     use HasFactory;
 
-    // public function f_a_q_categorie(){
-    //     return $this->belongsTo('App\Models\FAQCategorie');
-    // }
+   
 
     public function f_a_q_categorie()
 {

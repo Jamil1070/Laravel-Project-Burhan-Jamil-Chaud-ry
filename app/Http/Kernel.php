@@ -71,12 +71,6 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\AdminMiddleware::class,
     ];
 
-    // app/Http/Kernel.php
-
-// protected $routeMiddleware = [
-//     // Otros middlewares...
-
-//     'admin' => \App\Http\Middleware\AdminMiddleware::class,
-// ];
+   
 
 }

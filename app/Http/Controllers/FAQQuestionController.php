@@ -24,7 +24,7 @@ class FAQQuestionController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request);
+        
         if (!Auth::user()->is_admin) {
             abort(403, 'Only admins can add questions');
         }
@@ -44,7 +44,7 @@ class FAQQuestionController extends Controller
 
         return redirect()->route('f_a_q_categories.show', ['f_a_q_category' => $validated['f_a_q_categorie_id']])->with('status', 'FAQ added');
 
-        // return redirect()->route('f_a_q_categories.show', ['id' => $validated['f_a_q_categorie_id']])->with('status', 'FAQ added');
+        
     }
 
     public function create($f_a_q_categorie_id)
@@ -82,7 +82,7 @@ class FAQQuestionController extends Controller
         abort(403, 'Only admins can edit questions');
     }
 
-    // dd($request);
+    
     $validated = $request->validate([
         'question' => 'required|min:3',
         'answer' => 'required|min:3',
@@ -100,21 +100,7 @@ class FAQQuestionController extends Controller
 
 }
 
-
-    // public function destroy($id)
-    // {
-    //     $f_a_q_question = FAQQuestion::findOrFail($id);
-
-    //     if (!Auth::user()->is_admin) {
-    //         abort(403, 'Only admins can delete FAQs');
-    //     }
-
-    //     $f_a_q_categorie_id = $f_a_q_question->f_a_q_categorie_id;
-
-    //     $f_a_q_question->delete();
-
-    //     return redirect()->route('f_a_q_categories.show', ['id' => $f_a_q_categorie_id])->with('status', 'FAQ deleted');
-    // }
+ 
 
     public function destroy($id)
 {

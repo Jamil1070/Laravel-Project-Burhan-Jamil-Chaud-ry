@@ -12,7 +12,7 @@
 
 
         <div class="container border rounded p-4" style="background-color: lightblue; border;">
-            <h4>U bent niet ingelogd</h4>
+            <h4>You are not logged in!</h4>
             <div class="mt-4">
                 <a href="/login" style="text-decoration:none; color:black;"><strong>Login</strong></a>
                 <a href="/register" style="text-decoration:none; color:black; margin:120px; f"><strong>Register</strong></a>
@@ -51,7 +51,7 @@
                 @foreach ($posts as $post)
                 <h3><a href="{{route('posts.show', $post->id)}}" style="text-decoration:none; ">{{$post->title}}</a></h3>
                 {{-- <p>{{$post->message}}</p> --}}
-                <small>Gepost door <strong><a href="{{route('profile', $post->user->username)}}" style="text-decoration: none; color: lighblue">{{$post->user->username}}</a> </strong> op {{$post->created_at->format('d/m/Y \o\m H:i')}} </small>
+                <small>Posted by <strong><a href="{{route('profile', $post->user->username)}}" style="text-decoration: none; color: lighblue">{{$post->user->username}}</a> </strong> op {{$post->created_at->format('d/m/Y \o\m H:i')}} </small>
                 <br>
 
 
@@ -68,7 +68,7 @@
                     @endif
                 @endauth
                 <br>
-                <small> Deze post heeft <strong style="color:red"> {{$post->likes()->count()}} likes </strong></small>
+                <small> This post has <strong style="color:red"> {{$post->likes()->count()}} likes </strong></small>
                  <hr>
 
                 @endforeach

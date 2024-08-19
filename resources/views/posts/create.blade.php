@@ -40,7 +40,7 @@
                             </div>
                         </div>
 
-                        {{-- Estoy intentando meter una foto --}}
+                        {{-- To put a photo --}}
 
                         <div class="row mb-3">
                             <label for="photo" class="col-md-4 col-form-label text-md-end">Photo</label>

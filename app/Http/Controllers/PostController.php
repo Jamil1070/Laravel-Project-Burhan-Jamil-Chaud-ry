@@ -10,14 +10,13 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-    //
-//si alguien intenta ir a posts/create sin estar logeado , no lo vamos a dejar
+    
     public function __construct(){
         $this->middleware('auth', ['except' =>['index', 'show']]);
     }
 
     public function index (){
-        //$posts = Post::orderBy('created_at', 'desc')->get();
+        
         $posts = Post::latest()->get();
 
         return view ('posts.index',compact ('posts'));
@@ -30,14 +29,14 @@ class PostController extends Controller
             'message'=> 'required|min:3',
 
         ]);
-        //CON ESTO NOS ASEGURAMOS DE QUE LOS DATOS SEAN CORRECTOS, SI HAY ALGO MAL DE AHI NO PASA
+       
 
         $post = new Post;
 
         if($request->hasFile('photo')){
             $file = $request->file('photo');
             $destinationPath = 'photos/uploadedphotos/';
-            //añado el tiempo para que no se repitan los nombres
+            
             $filename = time() . '-' . $file->getClientOriginalName();
             $uploadSuccess = $request->file('photo')->move($destinationPath, $filename);
             $post->photo_path = $destinationPath . $filename;
@@ -65,7 +64,6 @@ class PostController extends Controller
     public function edit($id){
         $post = Post::findOrFail($id);
 
-        //para que no podamos editar los posts que no son nuestros
         if ($post->user_id != Auth::user()->id){
             abort(403);
         }
@@ -78,7 +76,6 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
 
 
-        //para que no podamos editar los posts que no son nuestros
         if ($post->user_id != Auth::user()->id){
             abort(403);
         }
@@ -86,12 +83,12 @@ class PostController extends Controller
             'title'=> 'required|min:3',
             'message'=> 'required|min:3',]);
 
-            // dd($request->hasFile('photo'));
+            
 
             if($request->hasFile('photo')){
                 $file = $request->file('photo');
                 $destinationPath = 'photos/uploadedphotos/';
-                //añado el tiempo para que no se repitan los nombres
+                
                 $filename = time() . '-' . $file->getClientOriginalName();
                 $uploadSuccess = $request->file('photo')->move($destinationPath, $filename);
                 $post->photo_path = $destinationPath . $filename;

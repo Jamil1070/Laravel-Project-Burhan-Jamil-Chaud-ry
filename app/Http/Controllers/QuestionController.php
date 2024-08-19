@@ -32,14 +32,13 @@ class QuestionController extends Controller
             'message'=> 'required|min:3',
 
         ]);
-        //CON ESTO NOS ASEGURAMOS DE QUE LOS DATOS SEAN CORRECTOS, SI HAY ALGO MAL DE AHI NO PASA
-
+       
         $question = new Question;
 
         if($request->hasFile('photo')){
             $file = $request->file('photo');
             $destinationPath = 'photos/uploadedphotos/';
-            //añado el tiempo para que no se repitan los nombres
+           
             $filename = time() . '-' . $file->getClientOriginalName();
             $uploadSuccess = $request->file('photo')->move($destinationPath, $filename);
             $question->photo_path = $destinationPath . $filename;
@@ -54,10 +53,7 @@ class QuestionController extends Controller
         return redirect()->route('questions.index')-> with('status', 'Question added');
 
     }
-    // public function show($id){
-    //     $question = Question::findOrFail($id);
-    //     return view ('questions.show', compact('question'));
-    // }
+   
     public function show($id)
 {
     $question = Question::findOrFail($id);
@@ -74,7 +70,7 @@ class QuestionController extends Controller
     public function edit($id){
         $question = Question::findOrFail($id);
 
-        //para que no podamos editar los posts que no son nuestros
+        
         if ($question->user_id != Auth::user()->id){
             abort(403);
         }
@@ -87,7 +83,7 @@ class QuestionController extends Controller
         $question = Question::findOrFail($id);
 
 
-        //para que no podamos editar los posts que no son nuestros
+       
         if ($question->user_id != Auth::user()->id){
             abort(403);
         }
@@ -95,12 +91,12 @@ class QuestionController extends Controller
             'title'=> 'required|min:3',
             'message'=> 'required|min:3',]);
 
-            // dd($request->hasFile('photo'));
+            
 
             if($request->hasFile('photo')){
                 $file = $request->file('photo');
                 $destinationPath = 'photos/uploadedphotos/';
-                //añado el tiempo para que no se repitan los nombres
+                
                 $filename = time() . '-' . $file->getClientOriginalName();
                 $uploadSuccess = $request->file('photo')->move($destinationPath, $filename);
                 $question->photo_path = $destinationPath . $filename;
@@ -121,7 +117,7 @@ class QuestionController extends Controller
             abort(403, 'Only admins can delete posts');
         }
         $question = Question::findOrFail($id);
-        // $likes = Like::where('post_id', '=', $post->id)->delete();
+        
         $question->delete();
         return redirect()->route('questions.index')->with('status', 'Question deleted');
     }
