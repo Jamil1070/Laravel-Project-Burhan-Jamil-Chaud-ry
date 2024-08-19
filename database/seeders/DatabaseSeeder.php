@@ -30,19 +30,17 @@ class DatabaseSeeder extends Seeder
     {
        
 
-
-
           //ADMIN
           User::create([
             'id' => '7',
             'name' => 'admin',
             'username' => 'admin',
             'email' => 'admin@ehb.be',
-            'password' => 'Password!321',
+            'password' => 'admin123',// login admin
             'is_admin' => true,
         ]);
-        //USERS
 
+        //USERS(logins)
        
         User::create([
             'id' => '1',
@@ -50,7 +48,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'alex_gear',
             'dateofbirth' => '1991-05-12',
             'email' => 'alex.gear@example.com',
-            'password' => 'Password!321', 
+            'password' => 'guest123', 
             'aboutme' => 'Adventure seeker with a passion for custom cars.',
             'photo_path'=> 'photos/user1.jpg',
         ]);
@@ -61,7 +59,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'sofia_repair',
             'dateofbirth' => '1996-11-23',
             'email' => 'sofia.repair@example.com',
-            'password' => 'Password!321', // Keeping the existing password
+            'password' => 'guest123', // Keeping the existing password
             'aboutme' => 'Automotive technician who loves restoring old classics.',
             'photo_path'=> 'photos/user2.jpg',
         ]);
@@ -72,7 +70,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'liam_pilot',
             'dateofbirth' => '1989-07-16',
             'email' => 'liam.pilot@example.com',
-            'password' => 'Password!321', 
+            'password' => 'guest123', 
             'aboutme' => 'Flying enthusiast who enjoys speed and precision.',
             'photo_path'=>'photos/user3.jpg',
         ]);
@@ -83,7 +81,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'emma_auto',
             'dateofbirth' => '1995-03-08',
             'email' => 'emma.auto@example.com',
-            'password' => 'Password!321', 
+            'password' => 'guest123', 
             'aboutme' => 'Car lover with a knack for mechanical innovations.',
             'photo_path'=>'photos/user4.jpg',
         ]);
@@ -94,7 +92,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'noah_drives',
             'dateofbirth' => '1998-10-05',
             'email' => 'noah.drives@example.com',
-            'password' => 'Password!321', 
+            'password' => 'guest123', 
             'aboutme' => 'Driving enthusiast with a passion for motorsports.',
         ]);
 
@@ -104,7 +102,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'olivia_4x4',
             'dateofbirth' => '1983-06-22',
             'email' => 'olivia.4x4@example.com',
-            'password' => 'Password!321', 
+            'password' => 'guest123', 
             'aboutme' => 'Off-road adventurer who loves exploring rugged terrains.',
             'photo_path'=> 'photos/user6.jpg',
         ]);
